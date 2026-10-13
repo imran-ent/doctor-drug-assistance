@@ -1,0 +1,26 @@
+{
+  "dataset_type": "synthetic educational data",
+  "records": 1000,
+  "symptoms": [
+    "fever",
+    "cough",
+    "runny_nose",
+    "headache",
+    "stomach_pain",
+    "nausea",
+    "sore_throat",
+    "fatigue"
+  ],
+  "classification": {
+    "accuracy": 0.75,
+    "macro_precision": 0.7567399762097224,
+    "macro_recall": 0.7499999999999999,
+    "macro_f1": 0.750992436679387
+  },
+  "regression": {
+    "mae": 0.5397487990747234,
+    "rmse": 0.6856097832800757,
+    "r2": 0.8332127681511667
+  },
+  "clinical_validation": false
+}
