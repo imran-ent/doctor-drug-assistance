@@ -9,7 +9,8 @@ import {
   Stethoscope,
 } from "lucide-react";
 
-const API = "http://127.0.0.1:8000";
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 const symptomOptions = [
   { key: "fever", label: "Fever" },
@@ -105,7 +106,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`${API}/api/analysis`)
+    fetch(`${API_URL}/api/analysis`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Training metrics unavailable. Check the backend.");
@@ -138,7 +139,7 @@ export default function App() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API}/api/assess`, {
+      const response = await fetch(`${API_URL}/api/assess`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
