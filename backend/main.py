@@ -1,4 +1,4 @@
-
+from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 import json
 import joblib
@@ -20,12 +20,11 @@ app = FastAPI(title="Doctor–Drug Assistance | Academic Demo")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "https://doctor-drug-assistance.vercel.app/"
+        "https://doctor-drug-assistance.vercel.app",
     ],
-    allow_methods=["GET", "POST"],
-    allow_headers=["Content-Type"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Load the existing synthetic models.
