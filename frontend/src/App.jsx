@@ -8,6 +8,7 @@ import {
   ShieldAlert,
   Stethoscope,
 } from "lucide-react";
+import ModelPerformanceCharts from "./components/ModelPerformanceCharts";
 
 const API_URL =
   import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
@@ -299,7 +300,7 @@ export default function App() {
                 description="Error on artificial target"
               />
             </div>
-
+            <ModelPerformanceCharts metrics={metrics} />
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <section className="rounded-2xl border border-slate-200 bg-white p-5">
                 <h3 className="font-semibold">
